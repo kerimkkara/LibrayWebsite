@@ -1,0 +1,39 @@
+﻿@model List<DbFinal.Models.usp_MemberId_Result>
+@{
+    ViewBag.Title = "Üye Düzenle";
+}
+<button type="submit" onclick="window.location.href = 'MemberList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+    <form method="post" action="/Home/EditMember" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+
+                <input name="memberId" type="hidden" id="member_Id" value="@item.memberId" />
+                <div class="form-group">
+                    <label for="MemberName">Üye Adı :</label>
+                    <input type="text" class="form-control" name="memberName" id="memberName" value="@item.memberName" />
+                </div>
+                <div class="form-group">
+                    <label for="MemberSurname">Üye Soyadı :</label>
+                    <input type="text" class="form-control" name="memberSurname" id="MemberSurname" value="@item.memberSurname" />
+                </div>
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">Kayıt bulunamadı</td>
+            </tr>
+        }
+
+    </form>
+
+</div>

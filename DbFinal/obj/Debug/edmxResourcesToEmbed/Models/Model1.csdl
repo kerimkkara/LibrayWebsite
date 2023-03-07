@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibrayDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="usp_AdministratorId_Result">
+    <Property Name="administratorId" Type="Int32" Nullable="false" />
+    <Property Name="administratorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_AdministratorList_Result">
+    <Property Name="administratorId" Type="Int32" Nullable="false" />
+    <Property Name="administratorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_AuthorId_Result">
+    <Property Name="authorId" Type="Int32" Nullable="false" />
+    <Property Name="authorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="authorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_AuthorList_Result">
+    <Property Name="authorId" Type="Int32" Nullable="false" />
+    <Property Name="authorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="authorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_Book_Result">
+    <Property Name="bookId" Type="Int32" Nullable="false" />
+    <Property Name="publicationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="authorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="authorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bookName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_BookId_Result">
+    <Property Name="bookId" Type="Int32" Nullable="false" />
+    <Property Name="bookName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="publicationId" Type="Int32" Nullable="false" />
+    <Property Name="authorId" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_BookList_Result">
+    <Property Name="bookId" Type="Int32" Nullable="false" />
+    <Property Name="bookName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="publicationId" Type="Int32" Nullable="false" />
+    <Property Name="authorId" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_BookListId_Result">
+    <Property Name="bookName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_CategoryId_Result">
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_CategoryList_Result">
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_Lend_Result">
+    <Property Name="lendId" Type="Int32" Nullable="false" />
+    <Property Name="lendTime" Type="DateTime" Nullable="false" />
+    <Property Name="lendLength" Type="Int32" Nullable="false" />
+    <Property Name="bookName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memberSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_LendId_Result">
+    <Property Name="lendId" Type="Int32" Nullable="false" />
+    <Property Name="lendTime" Type="DateTime" Nullable="false" />
+    <Property Name="lendLength" Type="Int32" Nullable="false" />
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+    <Property Name="bookId" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_LendList_Result">
+    <Property Name="lendId" Type="Int32" Nullable="false" />
+    <Property Name="lendTime" Type="DateTime" Nullable="false" />
+    <Property Name="lendLength" Type="Int32" Nullable="false" />
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+    <Property Name="bookId" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberId_Result">
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+    <Property Name="memberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memberSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberList_Result">
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+    <Property Name="memberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memberSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_PublicationId_Result">
+    <Property Name="publicationId" Type="Int32" Nullable="false" />
+    <Property Name="publicationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="usp_PublicationList_Result">
+    <Property Name="publicationId" Type="Int32" Nullable="false" />
+    <Property Name="publicationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="administratorId" />
+    </Key>
+    <Property Name="administratorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="administratorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="authorId" />
+    </Key>
+    <Property Name="authorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="authorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="authorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="Self.fk_author1" FromRole="Author" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="bookId" />
+    </Key>
+    <Property Name="bookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bookName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="publicationId" Type="Int32" Nullable="false" />
+    <Property Name="authorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="Self.fk_author1" FromRole="Book" ToRole="Author" />
+    <NavigationProperty Name="Lends" Relationship="Self.fk_book" FromRole="Book" ToRole="Lend" />
+    <NavigationProperty Name="Category" Relationship="Self.fk_category" FromRole="Book" ToRole="Category" />
+    <NavigationProperty Name="Publication" Relationship="Self.fk_publication1" FromRole="Book" ToRole="Publication" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="Self.fk_category" FromRole="Category" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Lend">
+    <Key>
+      <PropertyRef Name="lendId" />
+    </Key>
+    <Property Name="lendId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lendTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="lendLength" Type="Int32" Nullable="false" />
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+    <Property Name="bookId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="Self.fk_book" FromRole="Lend" ToRole="Book" />
+    <NavigationProperty Name="Member" Relationship="Self.fk_member" FromRole="Lend" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="logAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="administratorId" Type="Int32" />
+    <Property Name="administratorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="administratorPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="log_olusturan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logAuthor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="authorId" Type="Int32" />
+    <Property Name="authorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="authorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="log_olusturan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logBook">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bookId" Type="Int32" />
+    <Property Name="bookName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="publicationId" Type="Int32" Nullable="false" />
+    <Property Name="authorId" Type="Int32" Nullable="false" />
+    <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="log_olusturan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryId" Type="Int32" />
+    <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="log_olusturan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logLend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lendId" Type="Int32" />
+    <Property Name="lendTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="lendLength" Type="Int32" Nullable="false" />
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+    <Property Name="bookId" Type="Int32" Nullable="false" />
+    <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="log_olusturan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logMember">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="memberId" Type="Int32" />
+    <Property Name="memberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memberSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="log_olusturan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logPublication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="publicationId" Type="Int32" />
+    <Property Name="publicationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="log_olusturan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="logId" />
+    </Key>
+    <Property Name="logId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="changeID" Type="Int32" Nullable="false" />
+    <Property Name="operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="uptadated_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="memberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="memberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memberSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Lends" Relationship="Self.fk_member" FromRole="Member" ToRole="Lend" />
+  </EntityType>
+  <EntityType Name="Publication">
+    <Key>
+      <PropertyRef Name="publicationId" />
+    </Key>
+    <Property Name="publicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="publicationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="Self.fk_publication1" FromRole="Publication" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_author1">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="authorId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="authorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Lend" Type="Self.Lend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="bookId" />
+      </Principal>
+      <Dependent Role="Lend">
+        <PropertyRef Name="bookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_publication1">
+    <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publication">
+        <PropertyRef Name="publicationId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="publicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_member">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Lend" Type="Self.Lend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="memberId" />
+      </Principal>
+      <Dependent Role="Lend">
+        <PropertyRef Name="memberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibrayDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrators" EntityType="Self.Administrator" />
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="Books" EntityType="Self.Book" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Lends" EntityType="Self.Lend" />
+    <EntitySet Name="logAdmins" EntityType="Self.logAdmin" />
+    <EntitySet Name="logAuthors" EntityType="Self.logAuthor" />
+    <EntitySet Name="logBooks" EntityType="Self.logBook" />
+    <EntitySet Name="logCategories" EntityType="Self.logCategory" />
+    <EntitySet Name="logLends" EntityType="Self.logLend" />
+    <EntitySet Name="logMembers" EntityType="Self.logMember" />
+    <EntitySet Name="logPublications" EntityType="Self.logPublication" />
+    <EntitySet Name="Logs" EntityType="Self.Log" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="Publications" EntityType="Self.Publication" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="fk_author1" Association="Self.fk_author1">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="fk_book" Association="Self.fk_book">
+      <End Role="Book" EntitySet="Books" />
+      <End Role="Lend" EntitySet="Lends" />
+    </AssociationSet>
+    <AssociationSet Name="fk_category" Association="Self.fk_category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="fk_publication1" Association="Self.fk_publication1">
+      <End Role="Publication" EntitySet="Publications" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="fk_member" Association="Self.fk_member">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Lend" EntitySet="Lends" />
+    </AssociationSet>
+    <FunctionImport Name="usp_AdministratorId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_AdministratorId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AdministratorList" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_AdministratorList_Result)" />
+    <FunctionImport Name="usp_AuthorId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_AuthorId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AuthorList" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_AuthorList_Result)" />
+    <FunctionImport Name="usp_Book" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_Book_Result)" />
+    <FunctionImport Name="usp_BookId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_BookId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_BookList" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_BookList_Result)" />
+    <FunctionImport Name="usp_BookListId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_BookListId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CategoryId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_CategoryId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CategoryList" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_CategoryList_Result)" />
+    <FunctionImport Name="usp_Lend" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_Lend_Result)" />
+    <FunctionImport Name="usp_LendId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_LendId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_LendList" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_LendList_Result)" />
+    <FunctionImport Name="usp_MemberId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_MemberId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberList" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_MemberList_Result)" />
+    <FunctionImport Name="usp_PublicationId" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_PublicationId_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_PublicationList" IsComposable="true" ReturnType="Collection(LibrayDatabaseModel.usp_PublicationList_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(LibrayDatabaseModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(LibrayDatabaseModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="usp_DeleteAdministrator">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_DeleteAuthor">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_DeleteBook">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_DeleteCategory">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_DeleteLend">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_DeleteMember">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_DeletePublication">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ImportAdministrator">
+      <Parameter Name="administratorName" Mode="In" Type="String" />
+      <Parameter Name="administratorSurname" Mode="In" Type="String" />
+      <Parameter Name="administratorUsername" Mode="In" Type="String" />
+      <Parameter Name="administratorPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ImportAuthor">
+      <Parameter Name="authorName" Mode="In" Type="String" />
+      <Parameter Name="authorSurname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ImportBook">
+      <Parameter Name="bookName" Mode="In" Type="String" />
+      <Parameter Name="categoryId" Mode="In" Type="String" />
+      <Parameter Name="publicationId" Mode="In" Type="String" />
+      <Parameter Name="auhorId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ImportCategory">
+      <Parameter Name="categoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ImportLend">
+      <Parameter Name="lendTime" Mode="In" Type="String" />
+      <Parameter Name="lendLength" Mode="In" Type="String" />
+      <Parameter Name="memberId" Mode="In" Type="String" />
+      <Parameter Name="bookId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ImportMember">
+      <Parameter Name="memberName" Mode="In" Type="String" />
+      <Parameter Name="memberSurname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ImportPublication">
+      <Parameter Name="publicationName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Login" ReturnType="Collection(Int32)">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateAdministrator">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="administratorName" Mode="In" Type="String" />
+      <Parameter Name="administratorSurname" Mode="In" Type="String" />
+      <Parameter Name="administratorUsername" Mode="In" Type="String" />
+      <Parameter Name="administratorPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateAuthor">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="authorName" Mode="In" Type="String" />
+      <Parameter Name="authorSurname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateBook">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="bookName" Mode="In" Type="String" />
+      <Parameter Name="categoryId" Mode="In" Type="String" />
+      <Parameter Name="publicationId" Mode="In" Type="String" />
+      <Parameter Name="authorId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateCategory">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="categoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateLend">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="lendTime" Mode="In" Type="String" />
+      <Parameter Name="lendLength" Mode="In" Type="String" />
+      <Parameter Name="memberId" Mode="In" Type="String" />
+      <Parameter Name="bookId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateMember">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="memberName" Mode="In" Type="String" />
+      <Parameter Name="memberSurname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdatePublication">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="publicationName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ViewTable" ReturnType="Collection(LibrayDatabaseModel.usp_ViewTable_Result)">
+      <Parameter Name="tableName" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_ViewTable_Result">
+    <Property Type="Int32" Name="publicationId" Nullable="false" />
+    <Property Type="String" Name="publicationName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

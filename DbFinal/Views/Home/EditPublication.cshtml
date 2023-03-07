@@ -1,0 +1,36 @@
+﻿@model  List<DbFinal.Models.usp_PublicationId_Result>
+@{
+    ViewBag.Title = "Yayınevi Düzenle";
+}
+
+<button type="submit" onclick="window.location.href = 'PublicationList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+    
+    <form method="post" action="/Home/EditPublication" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="publicationId" type="hidden" id="publication_Id" value="@item.publicationId" />
+                <div class="form-group">
+                    <label for="FirstName">Yayınevi Adı :</label>
+                    <input type="text" class="form-control" name="publicationName" id="PublicationName" value="@item.publicationName" />
+                </div>
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">Kayıt bulunamadı</td>
+            </tr>
+        }
+    </form>
+
+</div>

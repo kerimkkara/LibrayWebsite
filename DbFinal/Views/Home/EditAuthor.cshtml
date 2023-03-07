@@ -1,0 +1,39 @@
+﻿@model List<DbFinal.Models.usp_AuthorId_Result>
+@{
+    ViewBag.Title = "Yazar Düzenle";
+}    
+
+<button type="submit" onclick="window.location.href = 'AuthorList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+
+    <form method="post" action="/Home/EditAuthor" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="authorId" type="hidden" id="author_Id" value="@item.authorId" />
+                <div class="form-group">
+                    <label for="AuthorName">Yazar Adı :</label>
+                    <input type="text" class="form-control" name="authorName" id="AuthorName" value="@item.authorName" />
+                </div>
+                <div class="form-group">
+                    <label for="AuthorSurname">Yazar Soyadı :</label>
+                    <input type="text" class="form-control" name="authorSurname" id="AuthorSurname" value="@item.authorSurname" />
+                </div>
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>

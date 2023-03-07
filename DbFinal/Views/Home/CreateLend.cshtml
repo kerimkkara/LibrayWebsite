@@ -1,0 +1,49 @@
+﻿@{
+    DbFinal.Models.LibrayDatabaseEntities ent = new DbFinal.Models.LibrayDatabaseEntities();
+    ViewBag.Title = "Ekle";
+}
+
+
+<button type="submit"  onclick="window.location.href = 'LendList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+    <form method="post" action="/Home/CreateLend">
+
+        <div class="form-group">
+            <label for="lend_Time">VeriLiş Tarihi :</label>
+            <input type="text" placeholder="mm-dd-yyyy" class="form-control" name="lendTime" id="lend_Time" />
+        </div>
+
+        <div class="form-group">
+            <label for="lend_Length">VeriLiş Süresi :</label>
+            <input type="text" class="form-control" name="lendLength" id="lend_Length" />
+        </div>
+
+        <div class="form-group">
+            <label for="book_Id" class="control-label"> Kitap Seçiniz :</label>
+            <select class="form-control" name="bookId" id="book_Id">
+                @foreach (var itemBook in ent.usp_BookList())
+                {
+                    <option value="@itemBook.bookId"> @itemBook.bookName </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Member_ID" class="control-label">Üye Seçiniz :</label>
+            <select class="form-control" name="memberId" id="Member_ID">
+                @foreach (var itemMember in ent.usp_MemberList())
+                {
+                    <option value="@itemMember.memberId">@itemMember.memberName  @itemMember.memberSurname</option>
+                }
+            </select>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>
+

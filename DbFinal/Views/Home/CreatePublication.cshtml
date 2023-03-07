@@ -1,0 +1,24 @@
+﻿@model DbFinal.Models.Publication
+@{
+
+    ViewBag.Title = "Yayınevi Ekle";
+}
+
+<button type="submit" onclick="window.location.href = 'PublicationList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row"
+     
+    <form method="post" action="/Home/CreatePublication">
+        
+        <div class="form-group">
+            <label for="publication_name">Yayınevi Adı :</label>
+            <input type="text" class="form-control" name="publicationName" id="publication_name" />
+               </br>
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+
+       
+    </form>
+
+</div>
+
+ 

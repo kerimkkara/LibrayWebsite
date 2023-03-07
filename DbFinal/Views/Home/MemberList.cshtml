@@ -1,0 +1,54 @@
+﻿
+@model List<DbFinal.Models.usp_MemberList_Result>
+@{
+    ViewBag.Title = "Üye Listesi";
+}
+
+
+<h2>Üye Listesi</h2>
+
+<div class="row" style="padding-bottom: 10px;">
+    <a href="/Home/CreateMember" class="btn btn-success pull-right btn-sm">Üye Ekle</a>
+</div>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Üye Adı</th>
+                    <th class="text-center">Üye Soyadı</th>
+                    <th class="text-center" style="width: 240px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    int sayac = 0;
+                    foreach (var item in Model)
+                    {
+                        sayac++;
+                        <tr>
+                            <td class="text-center"><b>@sayac</b></td>
+                            <td class="text-center">@item.memberName  </td>
+                            <td class="text-center">@item.memberSurname  </td>
+                            <td class="text-center">                            
+                                <a href="/Home/DeleteMember?id=@item.memberId" class="btn btn-danger btn-sm">Sil</a>      
+                                <a href="/Home/EditMember?id=@item.memberId" class="btn btn-primary btn-sm">Düzenle</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8">Kayıt bulunamadı</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

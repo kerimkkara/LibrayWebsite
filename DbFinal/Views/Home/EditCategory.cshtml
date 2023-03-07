@@ -1,0 +1,35 @@
+﻿@model List<DbFinal.Models.usp_CategoryId_Result>
+@{
+    ViewBag.Title = "Kategori Düzenle";
+}
+<button type="submit" onclick="window.location.href = 'CategoryList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+    
+    <form method="post" action="/Home/EditCategory" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="categoryId" type="hidden" id="author_Id" value="@item.categoryId" />
+                <div class="form-group">
+                    <label for="CategoryName">Kategori Adı :</label>
+                    <input type="text" class="form-control" name="categoryName" id="CategoryName" value="@item.categoryName" />
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>

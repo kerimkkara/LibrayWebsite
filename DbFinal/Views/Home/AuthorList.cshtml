@@ -1,0 +1,54 @@
+﻿
+@model List<DbFinal.Models.usp_AuthorList_Result>
+@{
+    ViewBag.Title = "Yazar Listesi";
+}
+
+
+<h2>Yazar Listesi</h2>
+
+<div class="row" style="padding-bottom: 10px;">
+    <a href="/Home/CreateAuthor" class="btn btn-success pull-right btn-sm">Yazar Ekle</a>
+</div>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Yazar Adı</th>
+                    <th class="text-center">Yazar Soyadı</th>
+                    <th class="text-center" style="width: 240px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    int sayac = 0;
+                    foreach (var item in Model)
+                    {
+                        sayac++;
+                        <tr>
+                            <td class="text-center"><b>@sayac</b></td>
+                            <td class="text-center">@item.authorName  </td>
+                            <td class="text-center">@item.authorSurname  </td>
+                            <td class="text-center">
+                                <a href="/Home/DeleteAuthor?id=@item.authorId" class="btn btn-danger btn-sm">Sil</a>
+                                <a href="/Home/EditAuthor?id=@item.authorId" class="btn btn-primary btn-sm">Düzenle</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8">Kayıt bulunamadı</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

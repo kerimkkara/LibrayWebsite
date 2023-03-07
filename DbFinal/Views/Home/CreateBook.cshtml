@@ -1,0 +1,54 @@
+﻿@model List<DbFinal.Models.usp_AuthorList_Result>
+@{
+    DbFinal.Models.LibrayDatabaseEntities ent = new DbFinal.Models.LibrayDatabaseEntities();
+    ViewBag.Title = "Kitap Ekle";
+}
+
+
+<button type="submit" onclick="window.location.href = 'BookList';"  class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+    <form method="post" action="/Home/CreateBook">
+
+        <div class="form-group">
+            <label for="book_name">Kitap Adı :</label>
+            <input type="text" class="form-control" name="bookName" id="book_name" />
+        </div>
+
+        <div class="form-group">
+            <label for="publication_ID" class="control-label"> Yayınevi Seçiniz :</label>
+            <select class="form-control" name="publicationId" id="Publication_ID">
+                @foreach (var itemPublication in ent.usp_PublicationList())
+                {
+                    <option value="@itemPublication.publicationId">@itemPublication.publicationName </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="CategoryID" class="control-label">Kategori Seçiniz :</label>
+            <select class="form-control" name="categoryId" id="CategoryID">
+                @foreach (var itemCategory in ent.usp_CategoryList())
+                {
+                    <option value="@itemCategory.categoryId ">@itemCategory.categoryName</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Author_ID" class="control-label">Yazar Seçiniz :</label>
+            <select class="form-control" name="authorId" id="Author_ID">
+                @foreach (var itemAuthor in Model)
+                {
+                    <option value="@itemAuthor.authorId">@itemAuthor.authorName  @itemAuthor.authorSurname</option>
+                }
+            </select>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>
+

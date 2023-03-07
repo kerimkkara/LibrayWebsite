@@ -1,0 +1,75 @@
+﻿@model List<DbFinal.Models.usp_BookId_Result>
+@{
+    DbFinal.Models.LibrayDatabaseEntities ent = new DbFinal.Models.LibrayDatabaseEntities();
+    ViewBag.Title = "Kitap Düzenle";
+}
+<button type="submit" onclick="window.location.href = 'BookList';"  class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+
+    
+    <form method="post" action="/Home/EditBook" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="bookId" type="hidden" id="bookId" value="@item.bookId" />
+                <input name="author_Id" type="hidden" id="author_Id" value="@item.authorId" />
+                <input name="category_Id" type="hidden" id="category_Id" value="@item.categoryId" />
+                <input name="publication_Id" type="hidden" id="publication_Id" value="@item.publicationId" />
+
+
+                <div class="form-group">
+                    <label for="BookName">Kitap Adı :</label>
+                    <input type="text" class="form-control" name="bookName" id="bookName" value="@item.bookName" />
+
+                </div>
+
+                <div class="form-group">
+                    <label for="publication_ID" class="control-label"> Yayınevi Seçiniz :</label>
+                    <select class="form-control" name="publicationId" id="Publication_ID">
+                        @foreach (var itemPublication in ent.usp_PublicationList())
+                        {
+                            <option value="@itemPublication.publicationId">@itemPublication.publicationName </option>
+                        }
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="CategoryID" class="control-label">Kategori Seçiniz :</label>
+                    <select class="form-control" name="categoryId" id="CategoryID">
+                        @foreach (var itemCategory in ent.usp_CategoryList())
+                        {
+                            <option value="@itemCategory.categoryId ">@itemCategory.categoryName</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Author_ID" class="control-label">Yazar Seçiniz :</label>
+                    <select class="form-control" name="authorId" id="Author_ID">
+                        @foreach (var itemAuthor in ent.usp_AuthorList())
+                        {
+                            <option value="@itemAuthor.authorId">@itemAuthor.authorName  @itemAuthor.authorSurname</option>
+                        }
+                    </select>
+                </div>
+
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>

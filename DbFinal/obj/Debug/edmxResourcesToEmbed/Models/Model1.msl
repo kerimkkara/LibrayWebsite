@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibrayDatabaseModelStoreContainer" CdmEntityContainer="LibrayDatabaseEntities">
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="administratorId" ColumnName="administratorId" />
+          <ScalarProperty Name="administratorName" ColumnName="administratorName" />
+          <ScalarProperty Name="administratorSurname" ColumnName="administratorSurname" />
+          <ScalarProperty Name="administratorUsername" ColumnName="administratorUsername" />
+          <ScalarProperty Name="administratorPassword" ColumnName="administratorPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Author">
+        <MappingFragment StoreEntitySet="Author">
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+          <ScalarProperty Name="authorName" ColumnName="authorName" />
+          <ScalarProperty Name="authorSurname" ColumnName="authorSurname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Book">
+        <MappingFragment StoreEntitySet="Book">
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lends">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Lend">
+        <MappingFragment StoreEntitySet="Lend">
+          <ScalarProperty Name="lendId" ColumnName="lendId" />
+          <ScalarProperty Name="lendTime" ColumnName="lendTime" />
+          <ScalarProperty Name="lendLength" ColumnName="lendLength" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logAdmins">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.logAdmin">
+        <MappingFragment StoreEntitySet="logAdmin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="administratorId" ColumnName="administratorId" />
+          <ScalarProperty Name="administratorName" ColumnName="administratorName" />
+          <ScalarProperty Name="administratorSurname" ColumnName="administratorSurname" />
+          <ScalarProperty Name="administratorUsername" ColumnName="administratorUsername" />
+          <ScalarProperty Name="administratorPassword" ColumnName="administratorPassword" />
+          <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+          <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+          <ScalarProperty Name="log_olusturan" ColumnName="log_olusturan" />
+          <ScalarProperty Name="log_ip" ColumnName="log_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logAuthors">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.logAuthor">
+        <MappingFragment StoreEntitySet="logAuthor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+          <ScalarProperty Name="authorName" ColumnName="authorName" />
+          <ScalarProperty Name="authorSurname" ColumnName="authorSurname" />
+          <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+          <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+          <ScalarProperty Name="log_olusturan" ColumnName="log_olusturan" />
+          <ScalarProperty Name="log_ip" ColumnName="log_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logBooks">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.logBook">
+        <MappingFragment StoreEntitySet="logBook">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+          <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+          <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+          <ScalarProperty Name="log_olusturan" ColumnName="log_olusturan" />
+          <ScalarProperty Name="log_ip" ColumnName="log_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logCategories">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.logCategory">
+        <MappingFragment StoreEntitySet="logCategory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+          <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+          <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+          <ScalarProperty Name="log_olusturan" ColumnName="log_olusturan" />
+          <ScalarProperty Name="log_ip" ColumnName="log_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logLends">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.logLend">
+        <MappingFragment StoreEntitySet="logLend">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="lendId" ColumnName="lendId" />
+          <ScalarProperty Name="lendTime" ColumnName="lendTime" />
+          <ScalarProperty Name="lendLength" ColumnName="lendLength" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+          <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+          <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+          <ScalarProperty Name="log_olusturan" ColumnName="log_olusturan" />
+          <ScalarProperty Name="log_ip" ColumnName="log_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logMembers">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.logMember">
+        <MappingFragment StoreEntitySet="logMember">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="memberName" ColumnName="memberName" />
+          <ScalarProperty Name="memberSurname" ColumnName="memberSurname" />
+          <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+          <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+          <ScalarProperty Name="log_olusturan" ColumnName="log_olusturan" />
+          <ScalarProperty Name="log_ip" ColumnName="log_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logPublications">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.logPublication">
+        <MappingFragment StoreEntitySet="logPublication">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="publicationName" ColumnName="publicationName" />
+          <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+          <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+          <ScalarProperty Name="log_olusturan" ColumnName="log_olusturan" />
+          <ScalarProperty Name="log_ip" ColumnName="log_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="logId" ColumnName="logId" />
+          <ScalarProperty Name="changeID" ColumnName="changeID" />
+          <ScalarProperty Name="operation" ColumnName="operation" />
+          <ScalarProperty Name="tableName" ColumnName="tableName" />
+          <ScalarProperty Name="uptadated_at" ColumnName="uptadated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="memberName" ColumnName="memberName" />
+          <ScalarProperty Name="memberSurname" ColumnName="memberSurname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publications">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.Publication">
+        <MappingFragment StoreEntitySet="Publication">
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="publicationName" ColumnName="publicationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="LibrayDatabaseModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_AdministratorId" FunctionImportName="usp_AdministratorId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_AdministratorId_Result">
+          <ScalarProperty Name="administratorId" ColumnName="administratorId" />
+          <ScalarProperty Name="administratorName" ColumnName="administratorName" />
+          <ScalarProperty Name="administratorSurname" ColumnName="administratorSurname" />
+          <ScalarProperty Name="administratorUsername" ColumnName="administratorUsername" />
+          <ScalarProperty Name="administratorPassword" ColumnName="administratorPassword" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_AdministratorList" FunctionImportName="usp_AdministratorList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_AdministratorList_Result">
+          <ScalarProperty Name="administratorId" ColumnName="administratorId" />
+          <ScalarProperty Name="administratorName" ColumnName="administratorName" />
+          <ScalarProperty Name="administratorSurname" ColumnName="administratorSurname" />
+          <ScalarProperty Name="administratorUsername" ColumnName="administratorUsername" />
+          <ScalarProperty Name="administratorPassword" ColumnName="administratorPassword" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_AuthorId" FunctionImportName="usp_AuthorId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_AuthorId_Result">
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+          <ScalarProperty Name="authorName" ColumnName="authorName" />
+          <ScalarProperty Name="authorSurname" ColumnName="authorSurname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_AuthorList" FunctionImportName="usp_AuthorList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_AuthorList_Result">
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+          <ScalarProperty Name="authorName" ColumnName="authorName" />
+          <ScalarProperty Name="authorSurname" ColumnName="authorSurname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_Book" FunctionImportName="usp_Book">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_Book_Result">
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+          <ScalarProperty Name="publicationName" ColumnName="publicationName" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+          <ScalarProperty Name="authorName" ColumnName="authorName" />
+          <ScalarProperty Name="authorSurname" ColumnName="authorSurname" />
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_BookId" FunctionImportName="usp_BookId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_BookId_Result">
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_BookList" FunctionImportName="usp_BookList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_BookList_Result">
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="authorId" ColumnName="authorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_BookListId" FunctionImportName="usp_BookListId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_BookListId_Result">
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_CategoryId" FunctionImportName="usp_CategoryId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_CategoryId_Result">
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_CategoryList" FunctionImportName="usp_CategoryList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_CategoryList_Result">
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_Lend" FunctionImportName="usp_Lend">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_Lend_Result">
+          <ScalarProperty Name="lendId" ColumnName="lendId" />
+          <ScalarProperty Name="lendTime" ColumnName="lendTime" />
+          <ScalarProperty Name="lendLength" ColumnName="lendLength" />
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+          <ScalarProperty Name="memberName" ColumnName="memberName" />
+          <ScalarProperty Name="memberSurname" ColumnName="memberSurname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_LendId" FunctionImportName="usp_LendId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_LendId_Result">
+          <ScalarProperty Name="lendId" ColumnName="lendId" />
+          <ScalarProperty Name="lendTime" ColumnName="lendTime" />
+          <ScalarProperty Name="lendLength" ColumnName="lendLength" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_LendList" FunctionImportName="usp_LendList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_LendList_Result">
+          <ScalarProperty Name="lendId" ColumnName="lendId" />
+          <ScalarProperty Name="lendTime" ColumnName="lendTime" />
+          <ScalarProperty Name="lendLength" ColumnName="lendLength" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="bookId" ColumnName="bookId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_MemberId" FunctionImportName="usp_MemberId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_MemberId_Result">
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="memberName" ColumnName="memberName" />
+          <ScalarProperty Name="memberSurname" ColumnName="memberSurname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_MemberList" FunctionImportName="usp_MemberList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_MemberList_Result">
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="memberName" ColumnName="memberName" />
+          <ScalarProperty Name="memberSurname" ColumnName="memberSurname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_PublicationId" FunctionImportName="usp_PublicationId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_PublicationId_Result">
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="publicationName" ColumnName="publicationName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="LibrayDatabaseModel.Store.usp_PublicationList" FunctionImportName="usp_PublicationList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_PublicationList_Result">
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="publicationName" ColumnName="publicationName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="LibrayDatabaseModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="LibrayDatabaseModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="LibrayDatabaseModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="LibrayDatabaseModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="LibrayDatabaseModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="LibrayDatabaseModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="LibrayDatabaseModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteAdministrator" FunctionName="LibrayDatabaseModel.Store.usp_DeleteAdministrator" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteAuthor" FunctionName="LibrayDatabaseModel.Store.usp_DeleteAuthor" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteBook" FunctionName="LibrayDatabaseModel.Store.usp_DeleteBook" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteCategory" FunctionName="LibrayDatabaseModel.Store.usp_DeleteCategory" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteLend" FunctionName="LibrayDatabaseModel.Store.usp_DeleteLend" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteMember" FunctionName="LibrayDatabaseModel.Store.usp_DeleteMember" />
+    <FunctionImportMapping FunctionImportName="usp_DeletePublication" FunctionName="LibrayDatabaseModel.Store.usp_DeletePublication" />
+    <FunctionImportMapping FunctionImportName="usp_ImportAdministrator" FunctionName="LibrayDatabaseModel.Store.usp_ImportAdministrator" />
+    <FunctionImportMapping FunctionImportName="usp_ImportAuthor" FunctionName="LibrayDatabaseModel.Store.usp_ImportAuthor" />
+    <FunctionImportMapping FunctionImportName="usp_ImportBook" FunctionName="LibrayDatabaseModel.Store.usp_ImportBook" />
+    <FunctionImportMapping FunctionImportName="usp_ImportCategory" FunctionName="LibrayDatabaseModel.Store.usp_ImportCategory" />
+    <FunctionImportMapping FunctionImportName="usp_ImportLend" FunctionName="LibrayDatabaseModel.Store.usp_ImportLend" />
+    <FunctionImportMapping FunctionImportName="usp_ImportMember" FunctionName="LibrayDatabaseModel.Store.usp_ImportMember" />
+    <FunctionImportMapping FunctionImportName="usp_ImportPublication" FunctionName="LibrayDatabaseModel.Store.usp_ImportPublication" />
+    <FunctionImportMapping FunctionImportName="usp_Login" FunctionName="LibrayDatabaseModel.Store.usp_Login" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateAdministrator" FunctionName="LibrayDatabaseModel.Store.usp_UpdateAdministrator" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateAuthor" FunctionName="LibrayDatabaseModel.Store.usp_UpdateAuthor" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateBook" FunctionName="LibrayDatabaseModel.Store.usp_UpdateBook" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateCategory" FunctionName="LibrayDatabaseModel.Store.usp_UpdateCategory" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateLend" FunctionName="LibrayDatabaseModel.Store.usp_UpdateLend" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateMember" FunctionName="LibrayDatabaseModel.Store.usp_UpdateMember" />
+    <FunctionImportMapping FunctionImportName="usp_UpdatePublication" FunctionName="LibrayDatabaseModel.Store.usp_UpdatePublication" />
+    <FunctionImportMapping FunctionImportName="usp_ViewTable" FunctionName="LibrayDatabaseModel.Store.usp_ViewTable">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibrayDatabaseModel.usp_ViewTable_Result">
+          <ScalarProperty Name="publicationId" ColumnName="publicationId" />
+          <ScalarProperty Name="publicationName" ColumnName="publicationName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

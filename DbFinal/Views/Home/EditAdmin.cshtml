@@ -1,0 +1,59 @@
+﻿@model  List<DbFinal.Models.usp_AdministratorId_Result>
+@{
+    ViewBag.Title = "Admin Düzenle";
+}
+<button type="submit" onclick="window.location.href = 'AdminList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+    
+    <form method="post" action="/Home/EditAdmin" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="administratorId" type="hidden" id="administratorId" value="@item.administratorId" />
+
+                <div class="form-group">
+                    <label for="AdministratorName">Admin Adı :</label>
+                    <input type="text" class="form-control" name="administratorName" id="AdministratorName" value="@item.administratorName" />
+                </div>
+              
+
+                <div class="form-group">
+                    <label for="AdministratorSurname">Admin Soyadı :</label>
+                    <input type="text" class="form-control" name="administratorSurname" id="AdministratorSurname" value="@item.administratorSurname" />
+                </div>
+ 
+
+
+                <div class="form-group">
+                    <label for="AdministratorUsername">Admin Kullanıcı Adı :</label>
+                    <input type="text" class="form-control" name="administratorUsername" id="AdministratorUsername" value="@item.administratorUsername" />
+                </div>
+             
+
+                <div class="form-group">
+                    <label for="AdministratorPassword">Admin Şifre :</label>
+                    <input type="text" class="form-control" name="administratorPassword" id="AdministratorPassword" value="@item.administratorPassword" />
+                </div>
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+
+
+
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">Kayıt bulunamadı</td>
+            </tr>
+        }
+    </form>
+
+</div>

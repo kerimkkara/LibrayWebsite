@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibrayDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="administratorId" />
+    </Key>
+    <Property Name="administratorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="administratorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="administratorSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="administratorUsername" Type="nvarchar" MaxLength="50" />
+    <Property Name="administratorPassword" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="authorId" />
+    </Key>
+    <Property Name="authorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="authorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="authorSurname" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="bookId" />
+    </Key>
+    <Property Name="bookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookName" Type="nvarchar" MaxLength="50" />
+    <Property Name="categoryId" Type="int" Nullable="false" />
+    <Property Name="publicationId" Type="int" Nullable="false" />
+    <Property Name="authorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Lend">
+    <Key>
+      <PropertyRef Name="lendId" />
+    </Key>
+    <Property Name="lendId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lendTime" Type="datetime" Nullable="false" />
+    <Property Name="lendLength" Type="int" Nullable="false" />
+    <Property Name="memberId" Type="int" Nullable="false" />
+    <Property Name="bookId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="logAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="administratorId" Type="int" />
+    <Property Name="administratorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="administratorSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="administratorUsername" Type="nvarchar" MaxLength="50" />
+    <Property Name="administratorPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_islem" Type="varchar" MaxLength="10" />
+    <Property Name="log_tarih" Type="datetime" Nullable="false" />
+    <Property Name="log_olusturan" Type="varchar" MaxLength="100" />
+    <Property Name="log_ip" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="logAuthor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="authorId" Type="int" />
+    <Property Name="authorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="authorSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_islem" Type="varchar" MaxLength="10" />
+    <Property Name="log_tarih" Type="datetime" Nullable="false" />
+    <Property Name="log_olusturan" Type="varchar" MaxLength="100" />
+    <Property Name="log_ip" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="logBook">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookId" Type="int" />
+    <Property Name="bookName" Type="nvarchar" MaxLength="50" />
+    <Property Name="categoryId" Type="int" Nullable="false" />
+    <Property Name="publicationId" Type="int" Nullable="false" />
+    <Property Name="authorId" Type="int" Nullable="false" />
+    <Property Name="log_islem" Type="varchar" MaxLength="10" />
+    <Property Name="log_tarih" Type="datetime" Nullable="false" />
+    <Property Name="log_olusturan" Type="varchar" MaxLength="100" />
+    <Property Name="log_ip" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="logCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryId" Type="int" />
+    <Property Name="categoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_islem" Type="varchar" MaxLength="10" />
+    <Property Name="log_tarih" Type="datetime" Nullable="false" />
+    <Property Name="log_olusturan" Type="varchar" MaxLength="100" />
+    <Property Name="log_ip" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="logLend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lendId" Type="int" />
+    <Property Name="lendTime" Type="datetime" Nullable="false" />
+    <Property Name="lendLength" Type="int" Nullable="false" />
+    <Property Name="memberId" Type="int" Nullable="false" />
+    <Property Name="bookId" Type="int" Nullable="false" />
+    <Property Name="log_islem" Type="varchar" MaxLength="10" />
+    <Property Name="log_tarih" Type="datetime" Nullable="false" />
+    <Property Name="log_olusturan" Type="varchar" MaxLength="100" />
+    <Property Name="log_ip" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="logMember">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberId" Type="int" />
+    <Property Name="memberName" Type="nvarchar" MaxLength="50" />
+    <Property Name="memberSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_islem" Type="varchar" MaxLength="10" />
+    <Property Name="log_tarih" Type="datetime" Nullable="false" />
+    <Property Name="log_olusturan" Type="varchar" MaxLength="100" />
+    <Property Name="log_ip" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="logPublication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="publicationId" Type="int" />
+    <Property Name="publicationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_islem" Type="varchar" MaxLength="10" />
+    <Property Name="log_tarih" Type="datetime" Nullable="false" />
+    <Property Name="log_olusturan" Type="varchar" MaxLength="100" />
+    <Property Name="log_ip" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="logId" />
+    </Key>
+    <Property Name="logId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="changeID" Type="int" Nullable="false" />
+    <Property Name="operation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="uptadated_at" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="memberId" />
+    </Key>
+    <Property Name="memberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberName" Type="nvarchar" MaxLength="50" />
+    <Property Name="memberSurname" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Publication">
+    <Key>
+      <PropertyRef Name="publicationId" />
+    </Key>
+    <Property Name="publicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="publicationName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="fk_author1">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="authorId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="authorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Lend" Type="Self.Lend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="bookId" />
+      </Principal>
+      <Dependent Role="Lend">
+        <PropertyRef Name="bookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_member">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Lend" Type="Self.Lend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="memberId" />
+      </Principal>
+      <Dependent Role="Lend">
+        <PropertyRef Name="memberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_publication1">
+    <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publication">
+        <PropertyRef Name="publicationId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="publicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_AdministratorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="administratorId" Type="int" Nullable="false" />
+          <Property Name="administratorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="administratorSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="administratorUsername" Type="nvarchar" MaxLength="50" />
+          <Property Name="administratorPassword" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_AdministratorList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="administratorId" Type="int" Nullable="false" />
+          <Property Name="administratorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="administratorSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="administratorUsername" Type="nvarchar" MaxLength="50" />
+          <Property Name="administratorPassword" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_AuthorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="authorId" Type="int" Nullable="false" />
+          <Property Name="authorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="authorSurname" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_AuthorList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="authorId" Type="int" Nullable="false" />
+          <Property Name="authorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="authorSurname" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_Book" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="bookId" Type="int" Nullable="false" />
+          <Property Name="publicationName" Type="nvarchar" MaxLength="50" />
+          <Property Name="categoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="authorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="authorSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="bookName" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_BookId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="bookId" Type="int" Nullable="false" />
+          <Property Name="bookName" Type="nvarchar" MaxLength="50" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="publicationId" Type="int" Nullable="false" />
+          <Property Name="authorId" Type="int" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_BookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="bookId" Type="int" Nullable="false" />
+          <Property Name="bookName" Type="nvarchar" MaxLength="50" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="publicationId" Type="int" Nullable="false" />
+          <Property Name="authorId" Type="int" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_BookListId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="bookName" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_CategoryId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="categoryName" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_CategoryList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="categoryName" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_DeleteAdministrator" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_DeleteAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_DeleteBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_DeleteCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_DeleteLend" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_DeleteMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_DeletePublication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ImportAdministrator" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="administratorName" Type="nvarchar" Mode="In" />
+    <Parameter Name="administratorSurname" Type="nvarchar" Mode="In" />
+    <Parameter Name="administratorUsername" Type="nvarchar" Mode="In" />
+    <Parameter Name="administratorPassword" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ImportAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="authorName" Type="nvarchar" Mode="In" />
+    <Parameter Name="authorSurname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ImportBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bookName" Type="nvarchar" Mode="In" />
+    <Parameter Name="categoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="publicationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="auhorId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ImportCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="categoryName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ImportLend" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="lendTime" Type="nvarchar" Mode="In" />
+    <Parameter Name="lendLength" Type="nvarchar" Mode="In" />
+    <Parameter Name="memberId" Type="nvarchar" Mode="In" />
+    <Parameter Name="bookId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ImportMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="memberName" Type="nvarchar" Mode="In" />
+    <Parameter Name="memberSurname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ImportPublication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="publicationName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Lend" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="lendId" Type="int" Nullable="false" />
+          <Property Name="lendTime" Type="date" Nullable="false" />
+          <Property Name="lendLength" Type="int" Nullable="false" />
+          <Property Name="bookName" Type="nvarchar" MaxLength="50" />
+          <Property Name="memberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="memberSurname" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_LendId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="lendId" Type="int" Nullable="false" />
+          <Property Name="lendTime" Type="date" Nullable="false" />
+          <Property Name="lendLength" Type="int" Nullable="false" />
+          <Property Name="memberId" Type="int" Nullable="false" />
+          <Property Name="bookId" Type="int" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_LendList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="lendId" Type="int" Nullable="false" />
+          <Property Name="lendTime" Type="date" Nullable="false" />
+          <Property Name="lendLength" Type="int" Nullable="false" />
+          <Property Name="memberId" Type="int" Nullable="false" />
+          <Property Name="bookId" Type="int" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="memberId" Type="int" Nullable="false" />
+          <Property Name="memberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="memberSurname" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_MemberList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="memberId" Type="int" Nullable="false" />
+          <Property Name="memberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="memberSurname" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_PublicationId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="publicationId" Type="int" Nullable="false" />
+          <Property Name="publicationName" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_PublicationList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="publicationId" Type="int" Nullable="false" />
+          <Property Name="publicationName" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="usp_UpdateAdministrator" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+    <Parameter Name="administratorName" Type="nvarchar" Mode="In" />
+    <Parameter Name="administratorSurname" Type="nvarchar" Mode="In" />
+    <Parameter Name="administratorUsername" Type="nvarchar" Mode="In" />
+    <Parameter Name="administratorPassword" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdateAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+    <Parameter Name="authorName" Type="nvarchar" Mode="In" />
+    <Parameter Name="authorSurname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdateBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+    <Parameter Name="bookName" Type="nvarchar" Mode="In" />
+    <Parameter Name="categoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="publicationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="authorId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdateCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+    <Parameter Name="categoryName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdateLend" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+    <Parameter Name="lendTime" Type="nvarchar" Mode="In" />
+    <Parameter Name="lendLength" Type="nvarchar" Mode="In" />
+    <Parameter Name="memberId" Type="nvarchar" Mode="In" />
+    <Parameter Name="bookId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdateMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+    <Parameter Name="memberName" Type="nvarchar" Mode="In" />
+    <Parameter Name="memberSurname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdatePublication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="nvarchar" Mode="In" />
+    <Parameter Name="publicationName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ViewTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tableName" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="LibrayDatabaseModelStoreContainer">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lend" EntityType="Self.Lend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logAdmin" EntityType="Self.logAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logAuthor" EntityType="Self.logAuthor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logBook" EntityType="Self.logBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logCategory" EntityType="Self.logCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logLend" EntityType="Self.logLend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logMember" EntityType="Self.logMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logPublication" EntityType="Self.logPublication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_author1" Association="Self.fk_author1">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+    <AssociationSet Name="fk_book" Association="Self.fk_book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Lend" EntitySet="Lend" />
+    </AssociationSet>
+    <AssociationSet Name="fk_category" Association="Self.fk_category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+    <AssociationSet Name="fk_member" Association="Self.fk_member">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Lend" EntitySet="Lend" />
+    </AssociationSet>
+    <AssociationSet Name="fk_publication1" Association="Self.fk_publication1">
+      <End Role="Publication" EntitySet="Publication" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

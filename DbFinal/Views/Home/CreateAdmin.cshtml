@@ -1,0 +1,38 @@
+﻿@model DbFinal.Models.Administrator
+@{
+
+    ViewBag.Title = "Admin Ekle";
+}
+
+
+<button type="submit" onclick="window.location.href = 'AdminList';"class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+    <form method="post" action="/Home/CreateAdmin">
+
+        <div class="form-group">
+            <label for="administrator_Name">Admin Adı :</label>
+            <input type="text" class="form-control" name="administratorName" id="administrator_Name" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="administrator_Surname">Admin Soyadı :</label>
+            <input type="text" class="form-control" name="administratorSurname" id="administrator_Surname" />
+        </div>
+
+        <div class="form-group">
+            <label for="administrator_Username">Admin Kullanıcı Adı :</label>
+            <input type="text" class="form-control" name="administratorUsername" id="administrator_Username" />
+        </div>
+
+        <div class="form-group">
+            <label for="administrator_Password">Admin Şifre :</label>
+            <input type="password" class="form-control" name="administratorPassword" id="administrator_Password" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>
+
